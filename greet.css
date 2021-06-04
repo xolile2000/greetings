@@ -35,3 +35,7 @@ box-sizing: border-box;
 .pop-up{
     font-size: x-large;
 }
+.counter{
+    text-align: left;
+    font-size: xx-large;
+}

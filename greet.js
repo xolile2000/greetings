@@ -1,26 +1,29 @@
-var greetmebtn= document.querySelector(".greet-me");
+var greetmebtn= document.querySelector(".greetme");
 var strName = document.querySelector(".name1");
 var popup = document.querySelector(".pop-up");
 var radioLanguage = document.querySelector(".lingustic");
+var counter = document.querySelector(".counterClc")
 
+var greetInstance = greetings()
+var getconter = 0;
+var names = [];
 
+function welcomeName(){
+    var greetme = document.querySelector("input[name='language']:checked");
 
-function greetName(){
-    popup.innerHTML = strName.value;
-    var radiocheckedbtn = document.querySelector("input[name='language']:checked");
-    if(radiocheckedbtn){
-        var language = radiocheckedbtn.value
-        if(language === "isiZulu"){
-           return "sawubona ,"  + "";
-        }else if (language === "English"){
-            return "Hello ,"  + name1
-        }else if(language === "italian"){
-            return "ciao ," + name1
-        }
+   
+    greetInstance.greetName(greetme.value, strName.value);
+   
+    popup.innerHTML = greetInstance.greetName(greetme.value, strName.value);
+
+    counter.innerHTML = greetInstance.greetingcounter()
+    
+  
     }
-    radioLanguage.innerHTML = radiocheckedbtn.value;
-    // popup.innerHTML = strName.value;
-}
-greetmebtn.addEventListener("click",greetName)
-// radioLanguage.addEventListener("click",greetName)
+    
+
+ 
+
+greetmebtn.addEventListener("click",welcomeName)
+
 
