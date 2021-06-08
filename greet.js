@@ -9,34 +9,45 @@ var greetInstance = greetings();
 var getconter = 0;
 var names = [];
 
-function welcomeName(){
-    var greetme = document.querySelector("input[name='language']:checked");
-
-   
-    greetInstance.greetName(greetme.value, strName.value);
-   
-    popup.innerHTML = greetInstance.greetName(greetme.value, strName.value);
-
-    counter.innerHTML = greetInstance.greetingcounter();
-    // errors.innerHTML = greetInstance.greetErrors()
-  
-    }
-    greetmebtn.addEventListener("click",welcomeName);
-
-// function greetYou(){
+// function welcomeName(){
 //     var greetme = document.querySelector("input[name='language']:checked");
-//     var language = greetme.value;
-//     var theName = strName.value;
 
-//     if( language && theName ){
+   
+//     greetInstance.greetName(greetme.value, strName.value);
+   
 //     popup.innerHTML = greetInstance.greetName(greetme.value, strName.value);
-//     counter.innerHTML = greetInstance.greetingcounter();
 
-// }else if  (language === undefined  && theName !== undefined){
-//     errors.innerHTML = greetInstance.greetErrors()
-// }
-// }
-// greetmebtn.addEventListener("click",greetYou);
+//     counter.innerHTML = greetInstance.greetingcounter();
+//     // errors.innerHTML = greetInstance.greetErrors()
+  
+//     }
+//     greetmebtn.addEventListener("click",welcomeName);
+
+
+function greetYou(){
+    var greetme = document.querySelector("input[name='language']:checked");
+    var theName = strName.value;
+    // var language = greetme.value;
+    // alert(greetme)
+    if(greetme  && theName){
+        var language = greetme.value;
+        
+
+        popup.innerHTML = greetInstance.greetName(language,theName);
+        counter.innerHTML = greetInstance.greetingcounter();
+    
+    }else if(!theName && greetme) {
+        
+        errors.innerHTML = greetInstance.greetErrors();
+    }
+    else if(theName && greetme === null){
+        
+        errors.innerHTML = greetInstance.greetErrors(greetme, theName); 
+    }else if(!theName && !language){
+        errors.innerHTML = greetInstance.greetErrors(language,theName); 
+    }
+    }
+greetmebtn.addEventListener("click",greetYou);
 
 
 

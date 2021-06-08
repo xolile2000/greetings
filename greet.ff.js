@@ -2,16 +2,16 @@ function greetings() {
    
     var namesGreeted = {};
     // var getcounter; 
-    function greetName(language, name1) {
+    function greetName(greetme, name1) {
         addUserName(name1)
-        if (language === "IsiZulu") {
+        if (greetme === "IsiZulu") {
             return "Sawubona " + name1
         }
 
-        else if (language === "English") {
+        else if (greetme === "English") {
             return "Hello " + name1
         }
-        else if (language === "Italian") {
+        else if (greetme === "Italian") {
             return "ciao " + name1
         }    
 
@@ -19,13 +19,13 @@ function greetings() {
 
     function greetErrors(language,name1){
         if(name1 === undefined){
-            return "enter name"
+            return "enter name";
         }
-         if(language === undefined){
-            return "select language"
+         else if(language === null){
+            return "select language";
         }
-        else if(name1 && language === undefined){
-            return "please entre name and select language"
+        else if(!name1 && !language ){
+            return "please enter name and select language";
         }
     }
     
