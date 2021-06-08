@@ -27,8 +27,7 @@ var names = [];
 function greetYou(){
     var greetme = document.querySelector("input[name='language']:checked");
     var theName = strName.value;
-    // var language = greetme.value;
-    // alert(greetme)
+    
     if(greetme  && theName){
         var language = greetme.value;
         
