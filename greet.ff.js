@@ -2,17 +2,20 @@ function greetings() {
    
     var namesGreeted = {};
     // var getcounter; 
-    function greetName(greetme, name1) {
-        addUserName(name1)
+    function greetName(greetme, names) {
+        addUserName(names)
+        var names = names.charAt(0).toUpperCase() + 
+        names.slice(1).toLowerCase();
+        
         if (greetme === "IsiZulu") {
-            return "Sawubona " + name1
+            return "Sawubona " + names
         }
 
         else if (greetme === "English") {
-            return "Hello " + name1
+            return "Hello " + names
         }
         else if (greetme === "Italian") {
-            return "ciao " + name1
+            return "ciao " + names
         }    
 
     }
@@ -30,6 +33,8 @@ function greetings() {
     }
     
     function addUserName(name1){
+        var name1 = name1.charAt(0).toUpperCase() + 
+        name1.slice(1).toLowerCase();
         if(namesGreeted[name1] === undefined){
             namesGreeted[name1] = 0
         } 
@@ -37,13 +42,20 @@ function greetings() {
     function greetingcounter(){
         return Object.keys(namesGreeted).length
     }
+    // function capitalizeFLetter(name1) {
+    //     //  var string = strName.value;
+    //      return name1.charAt(0).toUpperCase() + 
+    //       name1.slice(1);
+    // }
 
    
   
     return {
         greetName,
         greetingcounter,
-        greetErrors
+        greetErrors,
+        
+
         
     }
 }

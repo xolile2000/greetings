@@ -31,7 +31,7 @@ function greetYou(){
     if(greetme  && theName){
         var language = greetme.value;
         
-
+      
         popup.innerHTML = greetInstance.greetName(language,theName);
         counter.innerHTML = greetInstance.greetingcounter();
     
@@ -46,6 +46,7 @@ function greetYou(){
         errors.innerHTML = greetInstance.greetErrors(language,theName); 
     }
     }
+    
 greetmebtn.addEventListener("click",greetYou);
 
 
