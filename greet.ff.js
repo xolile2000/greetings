@@ -49,6 +49,9 @@ function greetings(existingNames) {
      function getNames(){
          return namesGreeted
      }
+     function remove(){
+        localStorage.clear();
+     }
     
 
 
@@ -60,7 +63,8 @@ function greetings(existingNames) {
         greetName,
         greetingcounter,
         greetErrors,
-        getNames
+        getNames,
+        remove
        
         
 

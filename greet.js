@@ -4,7 +4,8 @@ var popup = document.querySelector(".pop-up");
 var radioLanguage = document.querySelector(".lingustic");
 var counter = document.querySelector(".counterClc");
 var errors = document.querySelector(".error1");
-var store = document.querySelector(".store")
+var counterbtn = document.querySelector(".counterbtn")
+
 
 
 var existingNames; 
@@ -17,24 +18,9 @@ if( localStorage['name']){
 
 
 var greetInstance = greetings(existingNames);
-// var getconter = 0;
-// var names = [];
 
 
 
-// function welcomeName(){
-//     var greetme = document.querySelector("input[name='language']:checked");
-
-   
-//     greetInstance.greetName(greetme.value, strName.value);
-   
-//     popup.innerHTML = greetInstance.greetName(greetme.value, strName.value);
-
-//     counter.innerHTML = greetInstance.greetingcounter();
-//     // errors.innerHTML = greetInstance.greetErrors()
-  
-//     }
-//     greetmebtn.addEventListener("click",welcomeName);
 
 
 
@@ -62,15 +48,20 @@ function greetYou(){
     }
     }
     
-    //  let greeted = greetInstance.getNames()
-    //  if( localStorage['greeted']){
-    //      greeted = 
-    //  }
+   
        
         
 
     
 greetmebtn.addEventListener("click",greetYou);
+
+function removeItems(){
+    localStorage.clear();
+   location.reload()
+}
+ counterbtn.addEventListener('click',removeItems)
+
+
 
 
 
