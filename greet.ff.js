@@ -1,7 +1,7 @@
-function greetings() {
+function greetings(existingNames) {
    
-    var namesGreeted = {};
-    // var getcounter; 
+    var namesGreeted = existingNames || {};
+     
     function greetName(greetme, names) {
         addUserName(names)
         var names = names.charAt(0).toUpperCase() + 
@@ -35,18 +35,24 @@ function greetings() {
     function addUserName(name1){
         var name1 = name1.charAt(0).toUpperCase() + 
         name1.slice(1).toLowerCase();
-        if(namesGreeted[name1] === undefined){
-            namesGreeted[name1] = 0
-        } 
+        if(name1){
+            if(namesGreeted[name1] === undefined){
+                namesGreeted[name1] = 0
+            } 
+        }
+      
     }
+    
     function greetingcounter(){
         return Object.keys(namesGreeted).length
     }
-    // function capitalizeFLetter(name1) {
-    //     //  var string = strName.value;
-    //      return name1.charAt(0).toUpperCase() + 
-    //       name1.slice(1);
-    // }
+     function getNames(){
+         return namesGreeted
+     }
+    
+
+
+  
 
    
   
@@ -54,6 +60,8 @@ function greetings() {
         greetName,
         greetingcounter,
         greetErrors,
+        getNames
+       
         
 
         
