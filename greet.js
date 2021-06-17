@@ -25,6 +25,10 @@ var greetInstance = greetings(existingNames);
 
 
 function greetYou(){
+    setTimeout(function(){
+        errors.innerHTML = greetInstance.timeOut();
+
+    },3000);
     var lang = document.querySelector("input[name='language']:checked");
     var theName = strName.value;
     

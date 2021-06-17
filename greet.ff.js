@@ -52,6 +52,9 @@ function greetings(existingNames) {
      function remove(){
         localStorage.clear();
      }
+     function timeOut (){
+         return ""
+     }
     
 
 
@@ -64,7 +67,8 @@ function greetings(existingNames) {
         greetingcounter,
         greetErrors,
         getNames,
-        remove
+        remove,
+        timeOut
        
         
 
