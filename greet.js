@@ -1,4 +1,4 @@
-var greetmebtn= document.querySelector(".greetme");
+var greetmebtn = document.querySelector(".greetme");
 var strName = document.querySelector(".name1");
 var popup = document.querySelector(".pop-up");
 var radioLanguage = document.querySelector(".lingustic");
@@ -8,9 +8,9 @@ var counterbtn = document.querySelector(".counterbtn")
 
 
 
-var existingNames; 
+var existingNames;
 
-if( localStorage['name']){
+if (localStorage['name']) {
     existingNames = JSON.parse(localStorage.getItem('name'))
     counter.innerHTML = Object.keys(existingNames).length
 
@@ -24,46 +24,58 @@ var greetInstance = greetings(existingNames);
 
 
 
-function greetYou(){
-    setTimeout(function(){
+function greetYou() {
+    setTimeout(function () {
         errors.innerHTML = greetInstance.timeOut();
 
-    },3000);
+    }, 3000);
     var lang = document.querySelector("input[name='language']:checked");
     var theName = strName.value;
-    
-    if(lang  && theName){
+
+
+
+
+    if (lang && theName) {
         var language = lang.value;
-        
-      
-        popup.innerHTML = greetInstance.greetName(language,theName);
+
+
+        popup.innerHTML = greetInstance.greetName(language, theName);
         localStorage.setItem('name', JSON.stringify(greetInstance.getNames()))
         counter.innerHTML = greetInstance.greetingcounter();
-    
-    }else if(!theName && lang) {
-        
+    } else if (!theName && lang) {
+
         errors.innerHTML = greetInstance.greetErrors();
     }
-    else if(theName && lang === null){
-        
-        errors.innerHTML = greetInstance.greetErrors(lang, theName); 
-    }else if(!theName && !language){
-        errors.innerHTML = greetInstance.greetErrors(language,theName); 
+    else if (theName && lang === null) {
+
+        errors.innerHTML = greetInstance.greetErrors(lang, theName);
+    } else if (!theName && !language) {
+        errors.innerHTML = greetInstance.greetErrors(language, theName);
     }
-    }
-    
-   
-       
-        
 
     
-greetmebtn.addEventListener("click",greetYou);
-
-function removeItems(){
-    localStorage.clear();
-   location.reload()
+    unchecked()
 }
- counterbtn.addEventListener('click',removeItems)
+
+
+
+
+
+
+greetmebtn.addEventListener("click", greetYou);
+
+function removeItems() {
+    localStorage.clear();
+    location.reload()
+    unchecked()
+}
+function unchecked() {
+    var lang = document.querySelector("input[name='language']:checked");
+    lang.checked = false
+    strName.value = ''
+
+}
+counterbtn.addEventListener('click', removeItems)
 
 
 

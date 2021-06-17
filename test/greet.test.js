@@ -31,7 +31,7 @@ describe("greetings" , function(){
            let greet = greetings()
         
            greet.greetErrors("IsiZulu",undefined)
-           assert.equal('enter name',greet.greetErrors('IsiZulu',undefined));
+           assert.equal('Please enter name',greet.greetErrors('IsiZulu',undefined));
     
     
            
@@ -40,7 +40,7 @@ describe("greetings" , function(){
             let greet = greetings()
          
             greet.greetErrors(null,"Xolile")
-             assert.equal("select language",greet.greetErrors(null,"Xolile"));
+             assert.equal("Please select language",greet.greetErrors(null,"Xolile"));
      
      
             
@@ -49,7 +49,7 @@ describe("greetings" , function(){
             let greet = greetings()
          
             greet.greetErrors("","")
-             assert.equal('please enter name and select language',greet.greetErrors("",""));
+             assert.equal('Please enter name and select language',greet.greetErrors("",""));
      
      
             
@@ -86,6 +86,18 @@ describe("greetings" , function(){
               greet.addUserName("zinhle")
               greet.addUserName("sipho")
               assert.equal(3,greet.greetingcounter())
+               
+        
+        
+               
+            });
+            it(' should be able to stop counting if a name is repeated' , function(){
+               let greet = greetings()
+               
+            
+              greet.addUserName("xolile")
+              greet.addUserName("xolile")
+              assert.equal(1,greet.greetingcounter())
                
         
         

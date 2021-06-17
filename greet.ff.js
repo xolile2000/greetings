@@ -22,13 +22,13 @@ function greetings(existingNames) {
 
     function greetErrors(language,name1){
         if(name1 === undefined){
-            return "enter name";
+            return "Please enter name";
         }
          else if(language === null){
-            return "select language";
+            return "Please select language";
         }
         else if(!name1 && !language ){
-            return "please enter name and select language";
+            return "Please enter name and select language";
         }
     }
     
