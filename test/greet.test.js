@@ -59,8 +59,8 @@ describe("greetings" , function(){
                let greet = greetings()
                
             
-              greet.greetName("xolile")
-              assert.equal(1,greet.greetName("xolile"))
+              greet.addUserName("xolile")
+              assert.equal(1,greet.greetingcounter())
                
         
         
@@ -68,15 +68,30 @@ describe("greetings" , function(){
             });
             it(' should be able to count how many names are being entered in the intext box' , function(){
                let greet = greetings()
-              
+               
             
-              greet.greetingcounter("xolile","Zinhle")
-              assert.equal(2,greet.greetingcounter("xolile","Zinhle"))
+              greet.addUserName("xolile")
+              greet.addUserName("zinhle")
+              assert.equal(2,greet.greetingcounter())
                
         
         
                
             });
+            it(' should be able to count how many names are being entered in the intext box' , function(){
+               let greet = greetings()
+               
+            
+              greet.addUserName("xolile")
+              greet.addUserName("zinhle")
+              greet.addUserName("sipho")
+              assert.equal(3,greet.greetingcounter())
+               
+        
+        
+               
+            });
+            
  
  });
 

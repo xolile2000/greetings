@@ -68,7 +68,8 @@ function greetings(existingNames) {
         greetErrors,
         getNames,
         remove,
-        timeOut
+        timeOut,
+        addUserName
        
         
 
